@@ -52,7 +52,7 @@ if (empty($errors)) {
 
     try {
         $paymentIntent = \Stripe\PaymentIntent::create([
-            'amount' => intval($payment['amount']),
+            'amount' => intval($payment['amount']) * 100,
             'currency' => $order['currency'],
             'metadata' => [
                 'payment_id' => $payment['id']

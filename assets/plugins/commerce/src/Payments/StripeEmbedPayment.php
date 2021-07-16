@@ -86,7 +86,7 @@ class StripeEmbedPayment extends Payment
     private function log($error,$level = 1)
     {
         if($this->getSetting('debug') == 0 && $level<2){
-            return;
+      //      return;
         }
 
         $this->modx->logEvent(150,$level,$error,'stripe-embed');
