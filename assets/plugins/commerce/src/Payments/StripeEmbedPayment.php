@@ -83,8 +83,6 @@ class StripeEmbedPayment extends Payment
 
     private function log($error,$level = 1)
     {
-        var_dump($this->getSetting('debug') == 0 && $level<2);
- die();
         if($this->getSetting('debug') == 0 && $level<2){
           return;
         }
