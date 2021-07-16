@@ -66,7 +66,6 @@ class StripeEmbedPayment extends Payment
 
                 $object = $event->data->object;
 
-
                 try {
                     $this->orderProcessor->processPayment($object->metadata->payment_id, floatval($object->amount_received) * 0.01);
                     $this->log('Payment process success');
@@ -86,7 +85,7 @@ class StripeEmbedPayment extends Payment
     private function log($error,$level = 1)
     {
         if($this->getSetting('debug') == 0 && $level<2){
-      //      return;
+          return;
         }
 
         $this->modx->logEvent(150,$level,$error,'stripe-embed');
